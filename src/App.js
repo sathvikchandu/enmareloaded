@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import StartPage from './components/Start page/StartPage';
+import Clientlogin from './components/Login/Clientlogin';
+import Developerlogin from './components/Login/Developerlogin';
+import Manager from './components/Login/Manager';
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
+import Whoru from './components/Start page/Whoru';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<StartPage/>}/>
+          <Route path="whoru" element={<Whoru/>}/>
+          <Route path="clientlogin" element={<Clientlogin/>}/>
+          <Route path="devlogin" element={<Developerlogin/>}/>
+          <Route path="managerlogin" element={<Manager/>}/>
+          
+        </Routes>
+      </Router>
+
     </div>
   );
 }
